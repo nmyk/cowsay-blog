@@ -5,7 +5,6 @@ import arrow
 PATH = os.getcwd()
 COWPOSTPATH = PATH + '/cowposts'
 COWDATE_FMT = 'YYYY-MM-DD HH:mm:ss'
-
 template_loader = jinja2.FileSystemLoader(searchpath=PATH)
 template_env = jinja2.Environment(loader=template_loader)
 
@@ -31,14 +30,13 @@ def main():
     for cowpostfile in os.listdir(COWPOSTPATH):
         with open(cowpostfile, 'r') as f:
             cowlinelists.append(f.readlines())
-    
     cowdict = dictify(cowlinelists)
     cowposts = cowblogsort(cowdict)
     cowtemplate = template_env.get_template('cowtemplate.html')
     with open(PATH + '/public_html/index.html', 'w') as f: 
         f.write(cowtemplate.render(cowposts=cowposts))
 
+
 if __name__ == '__main__':
     main()
-
 
