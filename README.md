@@ -1,7 +1,8 @@
 # a minimalist cowsay blog
 
 example:
-
+    
+    mkdir posts cowposts
     echo "hello world" > hello_world
-    . cowsay hello_world
-    python deploy.py
+    . cowpost hello_world
+    . deploy
