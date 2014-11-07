@@ -1,0 +1,10 @@
+#!/bin/bash
+
+HERE=$(pwd)
+POSTPATH="$HERE/posts"
+COWPOSTPATH="$HERE/cowposts"
+INFILE="${@: -1}"
+
+(date "+%Y-%m-%d %H:%M:%S" && cowsay "${@:1:($#-1)}" < $INFILE) > "$COWPOSTPATH/$INFILE.cowpost";
+
+mv $INFILE $POSTPATH;

@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>nick's tilde.farm page</title>
+  </head>
+  <body>
+    <style type="text/css">
+      body {background-color: black;
+            color: rgb(255,225,148);
+            width: 800;
+            padding: 4em;
+            font-family: Ubuntu Mono,
+                         DejaVu Sans Mono, 
+                         Droid Sans Mono, 
+                         Liberation Mono, 
+                         Monospace;}
+      a { color: rgb(0,255,0); }
+      a:visited { color: rgb(0,192,0) }
+      a:hover { color: white; }
+      * { font-size: 12pt; }
+    </style>
+    <h1>~~~~this is nick's tilde.farm page~~~~</h1>
+    <h2>optimized for 800x600</h2>
+    <pre>
+{% for cowpost in cowposts %}
+<font color="cyan">{{cowpost.date}}</font>
+{{cowpost.cowtext}}
+{% endfor %}
+</body>
+</html>
+
