@@ -1,0 +1,4 @@
+#!/bin/bash
+
+python deploy.py
+scp public_html/index.html nick@tilde.farm:~/public_html/
