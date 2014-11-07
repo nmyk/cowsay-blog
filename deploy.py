@@ -29,13 +29,13 @@ def cowmain():
     os.chdir(COWPOSTPATH)
     cowlinelists = []
     for cowpostfile in os.listdir(COWPOSTPATH):
-        with open(cowpostfile, 'r') as f:
-            cowlinelists.append(f.readlines())
+        with open(cowpostfile, 'r') as moo:
+            cowlinelists.append(moo.readlines())
     cowdict = make_cowdict(cowlinelists)
     cowposts = cowblogsort(cowdict)
     cowtemplate = template_env.get_template('cowtemplate.html')
-    with open(PATH + '/public_html/index.html', 'w') as f: 
-        f.write(cowtemplate.render(cowposts=cowposts))
+    with open(PATH + '/public_html/index.html', 'w') as moo: 
+        moo.write(cowtemplate.render(cowposts=cowposts))
 
 
 if __name__ == '__main__':
