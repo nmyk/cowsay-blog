@@ -10,8 +10,8 @@ template_env = jinja2.Environment(loader=template_loader)
 
 
 def dictify(cowposts):
-    cowdate = lambda x: x[0].strip()
-    cowtext = lambda x: ''.join(x[1:])
+    cowdate = lambda moo: moo[0].strip()
+    cowtext = lambda moo: ''.join(moo[1:])
     return {cowdate(cowpost): cowtext(cowpost) 
             for cowpost in cowposts}
 
@@ -19,7 +19,8 @@ def dictify(cowposts):
 def cowblogsort(cowdict):
     cowarrows = [arrow.get(cowdate, COWDATE_FMT)
                  for cowdate in cowdict]
-    cowblogorder = [x.format(COWDATE_FMT) for x in sorted(cowarrows)[::-1]]
+    cowblogorder = [moo.format(COWDATE_FMT) 
+                    for moo in sorted(cowarrows)[::-1]]
     return [{'date': cowdate, 'cowtext': cowdict[cowdate]}
             for cowdate in cowblogorder]
 
