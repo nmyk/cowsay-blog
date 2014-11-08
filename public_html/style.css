@@ -8,8 +8,17 @@
                      Droid Sans Mono,
                      Liberation Mono,
                      Monospace;}
+  .body_narrow {background-color: black;
+                color: rgb(255,225,148);
+                width: 400;
+                margin: 0 auto;
+                font-family: Ubuntu Mono,
+                             DejaVu Sans Mono,
+                             Droid Sans Mono,
+                             Liberation Mono,
+                             Monospace;}
   a { color: rgb(0,255,0); }
-  a:visited { color: rgb(0,192,0) }
+  a:visited { color: rgb(0,192,0); }
   a:hover { color: white; }
   h1 { font-size: 18pt;
        color: rgb(246,96,171);
