@@ -13,7 +13,7 @@ def make_cowdict(cowlinelists):
     cowdate = lambda moo: moo[0].strip()
     cowtext = lambda moo: ''.join(moo[1:])
     return {cowdate(cowlinelist): cowtext(cowlinelist) 
-            for cowpost in cowlinelists}
+            for cowlinelist in cowlinelists}
 
 
 def cowblogsort(cowdict):
