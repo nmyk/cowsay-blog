@@ -12,7 +12,7 @@ template_env = jinja2.Environment(loader=template_loader)
 def make_cowdict(cownamedlines):
     cowdate = lambda moo: moo[0].strip()
     cowtext = lambda moo: ''.join(moo[1:])
-    return {cowdate(cownamedpost): 
+    return {cowdate(cownamedpost[1]): 
                (cownamedpost[0], cowtext(cownamedpost[1])) 
            for cownamedpost in cownamedlines}
 
