@@ -27,6 +27,17 @@ def cowblogsort(cowdict):
             for cowdate in cowblogorder]
 
 
+def write_cowfiles(cowposts):
+    cowtemplate = template_env.get_template('cowtemplate.html')
+    cowposttemplate = template_env.get_template('cowposttemplate.html')
+    with open(PATH + '/public_html/index.html', 'w') as moo: 
+        moo.write(cowtemplate.render(cowposts=cowposts))
+    for cowpost in cowposts:
+        with open(PATH + '/cowposts_html/%s' 
+                  % cowpost['htmltitle'], 'w') as moo:
+            moo.write(cowposttemplate.render(cowpost=cowpost))   
+
+
 def cowmain():
     os.chdir(COWPOSTPATH)
     cowlinelists = []
@@ -37,14 +48,7 @@ def cowmain():
     cownamedlines = zip(cowpostfiles, cowlinelists)
     cowdict = make_cowdict(cownamedlines)
     cowposts = cowblogsort(cowdict)
-    cowtemplate = template_env.get_template('cowtemplate.html')
-    cowposttemplate = template_env.get_template('cowposttemplate.html')
-    with open(PATH + '/public_html/index.html', 'w') as moo: 
-        moo.write(cowtemplate.render(cowposts=cowposts))
-    for cowpost in cowposts:
-        with open(PATH + '/cowposts_html/%s' 
-                  % cowpost['htmltitle'], 'w') as moo:
-            moo.write(cowposttemplate.render(cowpost=cowpost))   
+    write_cowfiles(cowposts)
 
 
 if __name__ == '__main__':
