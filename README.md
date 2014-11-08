@@ -3,7 +3,7 @@
 usage:
     
     # Make necessary directories
-    mkdir posts cowposts cowposts_html public_html
+    mkdir posts cowposts cowposts_html
     
     # Moo!
     echo "hello world" > hello_world

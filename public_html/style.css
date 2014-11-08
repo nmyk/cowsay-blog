@@ -1,0 +1,18 @@
+  body {background-color: black;
+        color: rgb(255,225,148);
+        width: 800;
+        margin: 0 auto;
+        padding: 4em;
+        font-family: Ubuntu Mono,
+                     DejaVu Sans Mono,
+                     Droid Sans Mono,
+                     Liberation Mono,
+                     Monospace;}
+  a { color: rgb(0,255,0); }
+  a:visited { color: rgb(0,192,0) }
+  a:hover { color: white; }
+  h1 { font-size: 18pt;
+       color: rgb(246,96,171);
+       text-align: center; }
+  p.cowdate { color: rgb(0,255,255); }
+  * { font-size: 12pt }
