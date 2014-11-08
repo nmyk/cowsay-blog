@@ -3,32 +3,15 @@
     <title>nick's tilde.farm page</title>
   </head>
   <body>
-    <style type="text/css">
-      body {background-color: black;
-            color: rgb(255,225,148);
-            width: 800;
-            padding: 4em;
-            font-family: Ubuntu Mono,
-                         DejaVu Sans Mono, 
-                         Droid Sans Mono, 
-                         Liberation Mono, 
-                         Monospace;}
-      a { color: rgb(0,255,0); }
-      a:visited { color: rgb(0,192,0) }
-      a:hover { color: white; }
-      h1 { font-size: 18pt;
-           color: rgb(246,96,171);
-           text-align: center; } 
-      * { font-size: 12pt; }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <h1>~ nick at tilde dot farm ~</h1>
     <h2>Optimized for 800x600 -- Welcome to the farm.<br><br>You know when you talk to God as a kid, but then you realize that what you were trying to convince yourself was God responding to your prayers was just more of your own internal monologue? I do.</h2>
     <div>
         <div style="float:left">
-    <pre>{% for cowpost in cowposts %}
-<font color="cyan">{{cowpost.date}}</font>
-{{cowpost.cowtext}}
-{% endfor %}</pre>
+{% for cowpost in cowposts %}<pre>
+<a href="cowposts/{{cowpost.htmltitle}}"><p class=cowdate>{{cowpost.date}}</p></a>{{cowpost.cowtext}}
+</pre>
+{% endfor %}
         </div>
         <div style="float:right">
             <h2>Here's some other stuff:</h2>
@@ -37,6 +20,7 @@
                 <li><a href="http://nickmykins.com:5000">Random Java class name</a>
                 <li><a href="http://comics-jam.tumblr.com">Comics Jam</a>
                 <li><a href="http://github.com/nmyk/cowsay-blog">This site</a>
+                <li><a href="http://tilde.farm">~ Join us ~</a>
             </ul>
             <br>
             About me: <br>
@@ -51,6 +35,8 @@
                 ||----w |
    <font color=green>\|/</font>          ||     ||
              </pre>
+             <br>
+             <a href="cowposts">All posts</a>
         </div>
   </body>
 </html>

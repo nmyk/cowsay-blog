@@ -1,4 +1,5 @@
 #!/bin/bash
 
 python deploy.py
-scp public_html/index.html nick@tilde.farm:~/public_html/
+scp public_html/index.html public_html/style.css nick@tilde.farm:~/public_html/
+scp cowposts_html/*.html nick@tilde.farm:~/public_html/cowposts/

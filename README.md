@@ -1,8 +1,11 @@
-# a minimalist cowsay blog
+# a minimal cowsay blog
 
-example:
+usage:
     
-    mkdir posts cowposts public_html
+    # Make necessary directories
+    mkdir posts cowposts cowposts_html public_html;
+    
+    # Moo!
     echo "hello world" > hello_world
     . cowpost hello_world
     . deploy
