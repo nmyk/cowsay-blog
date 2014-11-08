@@ -30,8 +30,12 @@ def cowblogsort(cowdict):
 def write_cowfiles(cowposts):
     cowtemplate = template_env.get_template('cowtemplate.html')
     cowposttemplate = template_env.get_template('cowposttemplate.html')
+    cowpostindextemplate = template_env.get_template(
+                           'cowpostindextemplate.html')
     with open(PATH + '/public_html/index.html', 'w') as moo: 
         moo.write(cowtemplate.render(cowposts=cowposts))
+    with open(PATH + '/cowposts_html/index.html', 'w') as moo:
+        moo.write(cowpostindextemplate.render(cowposts=reversed(cowposts)))
     for cowpost in cowposts:
         with open(PATH + '/cowposts_html/%s' 
                   % cowpost['htmltitle'], 'w') as moo:
