@@ -9,11 +9,11 @@ template_loader = jinja2.FileSystemLoader(searchpath=PATH)
 template_env = jinja2.Environment(loader=template_loader)
 
 
-def dictify(cowposts):
+def make_cowdict(cowlinelists):
     cowdate = lambda moo: moo[0].strip()
     cowtext = lambda moo: ''.join(moo[1:])
-    return {cowdate(cowpost): cowtext(cowpost) 
-            for cowpost in cowposts}
+    return {cowdate(cowlinelist): cowtext(cowlinelist) 
+            for cowpost in cowlinelists}
 
 
 def cowblogsort(cowdict):
@@ -25,19 +25,19 @@ def cowblogsort(cowdict):
             for cowdate in cowblogorder]
 
 
-def main():
+def cowmain():
     os.chdir(COWPOSTPATH)
     cowlinelists = []
     for cowpostfile in os.listdir(COWPOSTPATH):
-        with open(cowpostfile, 'r') as f:
-            cowlinelists.append(f.readlines())
-    cowdict = dictify(cowlinelists)
+        with open(cowpostfile, 'r') as moo:
+            cowlinelists.append(moo.readlines())
+    cowdict = make_cowdict(cowlinelists)
     cowposts = cowblogsort(cowdict)
     cowtemplate = template_env.get_template('cowtemplate.html')
-    with open(PATH + '/public_html/index.html', 'w') as f: 
-        f.write(cowtemplate.render(cowposts=cowposts))
+    with open(PATH + '/public_html/index.html', 'w') as moo: 
+        moo.write(cowtemplate.render(cowposts=cowposts))
 
 
 if __name__ == '__main__':
-    main()
+    cowmain()
 
