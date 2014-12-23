@@ -9,5 +9,3 @@ usage:
     echo "hello world" > hello_world
     . cowpost hello_world
     . deploy
-
-http://tilde.farm/~nick
