@@ -2,6 +2,9 @@
 
 usage:
     
+    # Use your favorite editor to make deploy scp to the right place
+    vi deploy
+    
     # Make necessary directories
     mkdir posts cowposts cowposts_html
     
