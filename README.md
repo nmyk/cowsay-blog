@@ -5,10 +5,10 @@ usage:
     # Use your favorite editor to make deploy scp to the right place
     vi deploy
     
-    # Make necessary directories
-    mkdir posts cowposts cowposts_html
+    # Make necessary directory for index
+    mkdir cowposts_html
     
     # Moo!
     echo "hello world" > hello_world
-    . cowpost hello_world
+    python cowpost.py hello_world
     . deploy

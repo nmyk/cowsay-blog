@@ -2,6 +2,7 @@
 import jinja2
 import os
 import arrow
+from cowpost import db_connect
 PATH = os.getcwd()
 COWPOSTPATH = PATH + '/cowposts'
 COWDATE_FMT = 'YYYY-MM-DD HH:mm:ss'
@@ -43,16 +44,20 @@ def write_cowfiles(cowposts):
             moo.write(cowposttemplate.render(cowpost=cowpost))   
 
 
+def read_from_db():
+    with db_connect() as conn:
+        cur = conn.cursor()
+        cur.execute('''
+            select date
+                 , title || '.html' as htmltitle
+                 , cowtext
+            from cowposts
+            order by id desc''')
+        return cur.fetchall()
+
+
 def cowmain():
-    os.chdir(COWPOSTPATH)
-    cowlinelists = []
-    cowpostfiles = os.listdir(COWPOSTPATH)
-    for cowpostfile in cowpostfiles:
-        with open(cowpostfile, 'r') as moo:
-            cowlinelists.append(moo.readlines())
-    cownamedlines = zip(cowpostfiles, cowlinelists)
-    cowdict = make_cowdict(cownamedlines)
-    cowposts = cowblogsort(cowdict)
+    cowposts = read_from_db()
     write_cowfiles(cowposts)
 
 

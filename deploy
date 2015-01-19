@@ -1,5 +1,5 @@
 #!/bin/bash
 
 python deploy.py
-scp public_html/index.html public_html/style.css nick@nickmykins.com:~/public_html/
-scp cowposts_html/*.html nick@nickmykins.com:~/public_html/cowposts/
+scp public_html/index.html public_html/style.css nick.com:/var/www/cowsay-blog
+scp cowposts_html/*.html nick.com:/var/www/cowsay-blog/cowposts/
