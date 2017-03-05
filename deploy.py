@@ -28,7 +28,7 @@ def read_from_db():
         cur = conn.cursor()
         cur.execute('''
             select date
-                 , title || '.html' as htmltitle
+                 , 'cowposts/' || title || '.html' as htmltitle
                  , cowtext
             from cowposts
             order by id desc''')

@@ -1,6 +1,6 @@
 import sqlite3
 import arrow
-from sh import cowsay
+from sh import cowsay, mv
 import sys
 import os
 PATH = os.getcwd()
@@ -50,6 +50,7 @@ def main():
 	with open(filename, 'r') as f:
 		text = f.read()
 	db_insert(filename, text)
+	mv(filename, 'posts/')
 
 
 if __name__ == '__main__':

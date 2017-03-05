@@ -3,6 +3,7 @@
         width: 800;
         margin: 0 auto;
         padding: 4em;
+	font-size: 12pt;
         font-family: Ubuntu Mono,
                      DejaVu Sans Mono,
                      Droid Sans Mono,
@@ -12,16 +13,34 @@
                 color: rgb(255,225,148);
                 width: 400;
                 margin: 0 auto;
+		font-size: 12pt;
                 font-family: Ubuntu Mono,
                              DejaVu Sans Mono,
                              Droid Sans Mono,
                              Liberation Mono,
                              Monospace;}
+  .info {
+    float:right; 
+  }
+  .posts { 
+    float:left;
+  }
+
+  @media screen and (max-width: 600px) {
+    .info {
+      float:none;
+    }
+    .posts {
+     float:none;
+    }
+  }
+  
   a { color: rgb(0,255,0); }
   a:visited { color: rgb(0,192,0); }
   a:hover { color: white; }
   h1 { font-size: 18pt;
        color: rgb(246,96,171);
        text-align: center; }
+  h2 { font-size: 13pt; }
   p.cowdate { color: rgb(0,255,255); }
-  * { font-size: 12pt }
+  * {cursor: url(cigarette.png), default;}

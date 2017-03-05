@@ -1,42 +1,38 @@
-<html>
-  <head>
+
+<!-- saved from url=(0060)file:///Users/nick/Dropbox/code/cowsay-blog/cowtemplate.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
     <title>nick's page</title>
   </head>
   <body>
     <link rel="stylesheet" type="text/css" href="style.css">
     <h1>~ nick's page ~</h1>
-    <h2>Optimized for 800x600<br><br>You know when you talk to God as a kid, but then you realize that what you were trying to convince yourself was God responding to your prayers was just more of your own internal monologue? I do.</h2>
+    <h2>Optimized for 800x600<br><br>You know when you talk to God as a kid, but then you realize that what you were trying to convince yourself was God responding to your prayers was just more of your own internal monologue?<br><br></h2>
     <div>
-        <div style="float:left">
-{% for cowpost in cowposts %}<pre>
-<a href="cowposts/{{cowpost.htmltitle}}"><p class=cowdate>{{cowpost.date}}</p></a>{{cowpost.cowtext}}
-</pre>
-{% endfor %}
-        </div>
-        <div style="float:right">
-         <h2> <a href="cowposts">ARCHIVE</a> </h2>
+      <div class="info">
+         <h2> <a href="cowposts">ARCHIVE</a> | <a href="contact.html">CONTACT</a> </h2>
           <br><br>
             About me: <br>
-            <pre>
- ____________________ 
+            <pre> ____________________ 
 / Writer, performer, \
-| hacker: Brooklyn,  |
-\ New York           /
+\ hacker: New York   /
  -------------------- 
         \   ^__^
          \  (##)\_______
             (__)\       )\/\
                 ||----w |
-   <font color=green>\|/</font>          ||     ||
+   <font color="green">\|/</font>          ||     ||
              </pre>
-            <h2>Here's some other stuff:</h2>
-            <ul>
-                <li><a href="http://lt-dan.tumblr.com">Lieutenant Dan</a>
-                <li><a href="http://fart.town:5000">Random Java class name</a>
-                <li><a href="http://github.com/nmyk/cowsay-blog">Cowsay blog on github</a>
-            </ul>
-            <br>
+  <img src="internet_party.gif" alt="internet_party.gif" width="300">
+        </div><div class="posts">
+{% for cowpost in cowposts %}<pre><a href="{{cowpost.htmltitle}}"><p class="cowdate">{{cowpost.date}}</p></a>{{cowpost.cowtext}}
+</pre>
+{% endfor %}
+  <img src="lol_nothing_matters.gif" alt="lol_nothing_matters.gif" width="300">
         </div>
-  </body>
-</html>
+        
+    </div>
+  
 
+
+</body></html>
